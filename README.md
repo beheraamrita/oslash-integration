@@ -2,10 +2,10 @@
 
 Setting up connectivity to Google Drive APIs to achieve the following:
 
-1. Fetch all documents currently existing
-2. Listen for changes on a particular Google Drive folder (Currently Listens on all files/folders in the Drive)
-3. Writes into ChangeList any changes taht have occurred in the file or folder
-4. Writes into a json file every 'n' batch size
+- Fetch all documents currently existing 
+- Listen for changes on a particular Google Drive folder (Currently Listens on all files/folders in the Drive)
+- Writes into ChangeList any changes taht have occurred in the file or folder 
+- Writes into a json file every 'n' batch size
 
 
 ## Run Locally
@@ -40,3 +40,22 @@ On the cmd prompt
 ```bash
   gradle run
 ```
+
+## Current Set Up
+The current set up is for 
+```bash
+  DriveScopes.DRIVE_METADATA_READONLY 
+```
+which gives you scope for View and manage metadata of files in your Google Drive.
+
+If the files have to be downloaded the scope needs to be modified to
+```bash
+  DriveScopes.DRIVE_FILE or DriveScopes.DRIVE
+```
+which gives you scope for See, edit, create, and delete only the specific Google Drive files you use with this app.
+
+
+## TO DO
+- Improve the functionality to read the file and write the metadata into the json 
+- parallel processing of the data 
+- Unit test cases 

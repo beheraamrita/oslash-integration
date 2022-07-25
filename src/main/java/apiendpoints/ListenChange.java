@@ -44,14 +44,17 @@ public class ListenChange {
             }
         }
 
-//        String fileId = "1EY-a3D2ZbrBmtmCGUPMZfp9gg8pLxoplVGZ_ub2j3hY";
+
+    }
+/* TODO: Improve the writeToJson to handle meta data finds and writes */
+    /* TODO: Export file types needs to be custom depending on what kind of file we want to format from https://developers.google.com/drive/api/guides/ref-export-formats */
+
+//    public static void writeToJson(ChangeList change) {
+//        String fileId = "1EY-a3D2ZbrBmtmCGUPMZfp9gg8pLxoplVGZ_ub2j3hY"; // to pick from the changeStore
 //        OutputStream outputStream = new ByteArrayOutputStream();
 //        service.files().export(fileId, "text/plain")
 //                .executeMediaAndDownloadTo(outputStream);
 //        System.out.printf("file : "+ outputStream.toString());
-    }
-
-//    public static void writeToJson(ChangeList change) {
 //        ObjectMapper mapper = new ObjectMapper();
 //        mapper.writeValue(new File("FileStore/change.json"), change);
 //    }
