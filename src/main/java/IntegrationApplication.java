@@ -12,6 +12,7 @@ import com.google.api.client.json.gson.GsonFactory;
 import com.google.api.client.util.store.FileDataStoreFactory;
 import com.google.api.services.drive.Drive;
 import com.google.api.services.drive.DriveScopes;
+//import com.google.api.services.docs.v1.Docs;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -36,7 +37,7 @@ public class IntegrationApplication {
      * Global instance of the scopes required by this quickstart.
      * If modifying these scopes, delete your previously saved tokens/ folder.
      */
-    private static final List<String> SCOPES = Collections.singletonList(DriveScopes.DRIVE_METADATA_READONLY);
+    private static final List<String> SCOPES = Collections.singletonList(DriveScopes.DRIVE);
     private static final String CREDENTIALS_FILE_PATH = "/credentials.json";
 
     /**
@@ -77,6 +78,20 @@ public class IntegrationApplication {
         //Listen for changes on a Google Drive folders/files
         ListenChange.fetchChanges(service);
 
-
+//        String fileId = "1EY-a3D2ZbrBmtmCGUPMZfp9gg8pLxoplVGZ_ub2j3hY"; // to pick from the changeStore
+//        OutputStream outputStream = new ByteArrayOutputStream();
+//        service.files().export(fileId, "text/csv").executeMediaAndDownloadTo(outputStream);
+//        System.out.printf("file : "+ outputStream.toString());
+////        ObjectMapper mapper = new ObjectMapper();
+////        mapper.writeValue(new File("FileStore/change.json"), change);
+//
+//        Docs docsService =
+//                new Docs.Builder(HTTP_TRANSPORT, JSON_FACTORY, getCredentials(HTTP_TRANSPORT))
+//                        .setApplicationName(APPLICATION_NAME)
+//                        .build();
+//
+//        Document response = docsService.documents().get(fileId).execute();
+//        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+//        System.out.println(gson.toJson(response));
     }
 }

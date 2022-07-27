@@ -3,6 +3,7 @@ package apiendpoints;
 import com.google.api.services.drive.Drive;
 import com.google.api.services.drive.model.File;
 import com.google.api.services.drive.model.FileList;
+//import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
 import java.util.List;
@@ -24,6 +25,13 @@ public class SearchAll {
             for (File file : files) {
                 //System.out.printf("compleet" + file);
                 System.out.printf("[Name]: %s, \t [File Id]: (%s), \t [Created Time]: %s \n", file.getName(), file.getId(), file.getDescription(), file.getCreatedTime());
+//                ObjectMapper mapper = new ObjectMapper();
+//                FileData fileData = newe FileData();
+//                fileData.put("fileid");
+//                //file description
+//                // created
+//
+//                mapper.writeValue(new File("FileStore/change.json"), fileData);
             }
         }
     }
